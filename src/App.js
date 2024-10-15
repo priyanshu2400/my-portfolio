@@ -26,8 +26,8 @@ const FashionPortfolio = () => {
       images: [
         { src: "/images/Branding/hero.JPG", description: "" },
         { src: "/images/Branding/hero1.JPG", description: "" },
-        { src: "/images/Branding/hero2.JPG", description: "" },
-        { src: "/images/Branding/hero3.JPG", description: "" },
+        { src: "/images/Branding/hero2.jpg", description: "" },
+        { src: "/images/Branding/hero3.jpg", description: "" },
         { src: "/images/Branding/hero4.jpeg", description: "" },
       ]
     },
