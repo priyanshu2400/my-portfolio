@@ -172,15 +172,15 @@ const FashionPortfolio = () => {
           <h2 className={`mb-8 text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Get in Touch</h2>
           <p className={`mb-8 text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Interested in collaborations or custom projects? Let's connect!</p>
           <div className="flex justify-center space-x-6">
-            <a href="#" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
+            {/* <a href="#" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
               <Camera size={24} />
-            </a>
-            <a href="#" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
+            </a> */}
+            <a href="https://www.instagram.com/soumyavatsa25/profilecard/?igsh=cGYzeWNmbDkxdms5" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
               <Instagram size={24} />
             </a>
-            <a href="#" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
+            {/* <a href="#" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
               <Twitter size={24} />
-            </a>
+            </a> */}
           </div>
         </section>
       </main>
