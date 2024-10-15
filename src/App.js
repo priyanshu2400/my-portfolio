@@ -6,7 +6,7 @@ import ImageSlideShow from './components/ImageSlideShow';
 import './App.css'; // For any custom styles
 
 const FashionPortfolio = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
