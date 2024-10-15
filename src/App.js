@@ -54,7 +54,7 @@ const FashionPortfolio = () => {
         { src: "/images/photography/hero (6).jpeg", description: "" },
         { src: "/images/photography/hero (6).JPG", description: "" },
         { src: "/images/photography/hero (8).JPG", description: "" },
-        { src: "/images/photography/hero (9).JPG", description: "hero (9).JPG" },
+        { src: "/images/photography/hero (9).JPG", description: "" },
       ]
     },
     {
