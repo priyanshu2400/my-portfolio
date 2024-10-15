@@ -1,7 +1,10 @@
 import React from 'react';
 
-const PortfolioItem = ({ imageSrc, title }) => (
-  <div className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
+const PortfolioItem = ({ imageSrc, title, onClick }) => (
+  <div 
+    className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer"
+    onClick={onClick}
+  >
     <img src={imageSrc} alt={title} className="h-64 w-full object-cover" />
     <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
       <h3 className="text-xl font-semibold text-white">{title}</h3>

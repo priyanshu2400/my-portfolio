@@ -2,24 +2,97 @@ import React, { useState } from 'react';
 import { Moon, Sun, Camera, Instagram, Twitter } from 'lucide-react';
 import PortfolioItem from './components/PortfolioItem';
 import RollingText from './components/RollingText';
+import ImageSlideShow from './components/ImageSlideShow';
 import './App.css'; // For any custom styles
 
 const FashionPortfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
-
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  const portfolioItems = [
+  const portfolioItems1 = [
     { imageSrc: "/images/Miscellaneous/samp.jpeg", title: "Miscellaneous" },
     { imageSrc: "/images/Branding/hero.JPG", title: "Branding" },
-    { imageSrc: "/images/visual/hero.png", title: "Visual Merchandising" },
+    { imageSrc: "/images/visual/hero.PNG", title: "Visual Merchandising" },
     { imageSrc: "/images/photography/hero.jpeg", title: "Photography Series" },
     { imageSrc: "/images/Graphics/hero.JPG", title: "Graphic Design Work" },
-    { imageSrc: "/images/illustrations/hero.JPG", title: "Branding Project" },
+    { imageSrc: "/images/illustrations/hero.JPG", title: "Illustrations" },
   ];
-
+  const portfolioItems = [
+    {
+      title: "Branding",
+      images: [
+        { src: "/images/Branding/hero.JPG", description: "" },
+        { src: "/images/Branding/hero1.JPG", description: "" },
+        { src: "/images/Branding/hero2.JPG", description: "" },
+        { src: "/images/Branding/hero3.JPG", description: "" },
+        { src: "/images/Branding/hero4.jpeg", description: "" },
+      ]
+    },
+    {
+      title: "Visual Merchandising",
+      images: [
+        { src: "/images/visual/hero.PNG", description: "" },
+        { src: "/images/visual/hero2.PNG", description: "" },
+      ]
+    },
+    {
+      title: "Photography",
+      images: [
+        { src: "/images/photography/hero.jpeg", description: "" },
+        { src: "/images/photography/hero (1).JPG", description: "" },
+        { src: "/images/photography/hero (2).jpeg", description: "" },
+        { src: "/images/photography/hero (2).JPG", description: "" },
+        { src: "/images/photography/hero (3).jpeg", description: "" },
+        { src: "/images/photography/hero (3).JPG", description: "" },
+        { src: "/images/photography/hero (4).jpeg", description: "" },
+        { src: "/images/photography/hero (4).JPG", description: "" },
+        { src: "/images/photography/hero (5).jpeg", description: "" },
+        { src: "/images/photography/hero (5).JPG", description: "" },
+        { src: "/images/photography/hero (6).jpeg", description: "" },
+        { src: "/images/photography/hero (6).JPG", description: "" },
+        { src: "/images/photography/hero (8).JPG", description: "" },
+        { src: "/images/photography/hero (9).JPG", description: "hero (9).JPG" },
+      ]
+    },
+    {
+      title: "Graphic Design",
+      images: [
+        { src: "/images/Graphics/hero.JPG", description: "" },
+        { src: "/images/Graphics/hero1.JPG", description: "" },
+        { src: "/images/Graphics/hero2.JPG", description: "" },
+        { src: "/images/Graphics/hero3.JPG", description: "" },
+        { src: "/images/Graphics/hero4.JPG", description: "" },
+        { src: "/images/Graphics/hero5.JPG", description: "" },
+        { src: "/images/Graphics/hero6.jpg", description: "" },
+        { src: "/images/Graphics/hero10.jpeg", description: "" },
+      ]
+    },
+    {
+      title: "Illustrations",
+      images: [
+        { src: "/images/illustrations/hero.JPG", description: "" },
+        { src: "/images/illustrations/hero1.PNG", description: "" },
+        { src: "/images/illustrations/hero2.JPG", description: "" },
+        { src: "/images/illustrations/hero3.PNG", description: "" },
+        { src: "/images/illustrations/hero4.PNG", description: "" },
+        { src: "/images/illustrations/hero5.PNG", description: "" },
+        
+      ]
+    },
+    {
+      title: "Miscellaneous",
+      images: [
+        { src: "/images/Miscellaneous/hero.jpg", description: "" },
+        { src: "/images/Miscellaneous/hero1.jpeg", description: "" },
+        { src: "/images/Miscellaneous/hero2.jpeg", description: "" },
+        { src: "/images/Miscellaneous/hero3.jpeg", description: "" },
+        { src: "/images/Miscellaneous/hero4.jpeg", description: "" },
+      ]
+    },
+  ];
   const roles = [
     "Web Designer",
     "UI/UX Designer",
@@ -29,20 +102,25 @@ const FashionPortfolio = () => {
   ];
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-pink-50 to-purple-100 text-gray-800'}`}>
+    <div className={`min-h-screen scroll-smooth ${darkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-pink-50 to-purple-100 text-gray-800'}`}>
       <header className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
-        <div className="container mx-auto flex items-center justify-between px-4 py-6">
+        <div className="container mx-auto px-4 py-6 flex flex-wrap items-center justify-between">
           <h1 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Soumya Vatsa</h1>
-          <nav className="flex items-center">
+          <nav className="flex items-center mt-3">
             <ul className="flex space-x-6 mr-6">
               <li><a href="#portfolio" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-800'}`}>Portfolio</a></li>
               <li><a href="#about" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-800'}`}>About</a></li>
               <li><a href="#contact" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-800'}`}>Contact</a></li>
             </ul>
-            <button onClick={toggleDarkMode} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
           </nav>
+          <button 
+          onClick={toggleDarkMode} 
+          className={`p-2 rounded-full transition-colors duration-300 ${
+            darkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-gray-700'
+          }`}>
+          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+         </button>
+
         </div>
       </header>
 
@@ -62,10 +140,15 @@ const FashionPortfolio = () => {
         </section>
 
         <section id="portfolio" className="mb-16">
-          <h2 className={`mb-8 text-center text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Portfolio</h2>
+          <h2 className={`mb-8 text-center text-2xl md:text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Portfolio</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {portfolioItems.map((item, index) => (
-              <PortfolioItem key={index} imageSrc={item.imageSrc} title={item.title} />
+              <PortfolioItem 
+                key={index} 
+                title={item.title} 
+                imageSrc={item.images[0].src}
+                onClick={() => setSelectedCategory(item)}
+              />
             ))}
           </div>
         </section>
@@ -103,8 +186,14 @@ const FashionPortfolio = () => {
       </main>
 
       <footer className={`py-6 text-center ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-        <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>© 2024 Jane Doe. All rights reserved.</p>
+        <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>© 2024 Soumya Vatsa. All rights reserved.</p>
       </footer>
+      {selectedCategory && (
+        <ImageSlideShow 
+          images={selectedCategory.images} 
+          onClose={() => setSelectedCategory(null)} 
+        />
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@ const RollingText = ({ texts }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150); // Adjust typing speed
+  const [typingSpeed, setTypingSpeed] = useState(50); // Adjust typing speed
 
   useEffect(() => {
     const handleTyping = () => {
@@ -27,7 +27,7 @@ const RollingText = ({ texts }) => {
 
         if (displayText === currentText) {
           // Pause for a bit once the full text is typed
-          setTimeout(() => setIsDeleting(true), 1000); // Adjust pause before deleting
+          setTimeout(() => setIsDeleting(true), 500); // Adjust pause before deleting
         }
       }
     };
