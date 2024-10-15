@@ -173,7 +173,7 @@ const FashionPortfolio = () => {
           </motion.div>
         </section>
 
-        <section id="portfolio" className="py-20 -mt-20 sm:mt-0">
+        <section id="portfolio" className="py-20 -mt-10 sm:mt-10">
           <h2 className={`mb-12 text-center text-3xl sm:text-4xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Portfolio</h2>
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {portfolioItems.map((item, index) => (
