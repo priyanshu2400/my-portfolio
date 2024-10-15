@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Moon, Sun, Camera, Instagram, Twitter } from 'lucide-react';
+import { Moon, Sun, Camera, Instagram, Twitter, Linkedin } from 'lucide-react';
 import PortfolioItem from './components/PortfolioItem';
 import RollingText from './components/RollingText';
 import ImageSlideShow from './components/ImageSlideShow';
@@ -177,6 +177,9 @@ const FashionPortfolio = () => {
             </a> */}
             <a href="https://www.instagram.com/soumyavatsa25/profilecard/?igsh=cGYzeWNmbDkxdms5" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
               <Instagram size={24} />
+            </a>
+            <a href="https://www.linkedin.com/in/soumya-vatsa-371933328/" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
+              <Linkedin size={24} />
             </a>
             {/* <a href="#" className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-purple-600'}`}>
               <Twitter size={24} />
